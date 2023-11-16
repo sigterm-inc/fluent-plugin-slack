@@ -60,7 +60,7 @@ class SlackOutputTest < Test::Unit::TestCase
       create_driver(CONFIG + %[rtm true])
     end
 
-    # channel should be URI.unescape-ed
+    # channel should be CGI.unescape-ed
     d = create_driver(CONFIG + %[channel %23test])
     assert_equal '#test', d.instance.channel
 
